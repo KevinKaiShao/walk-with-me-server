@@ -1,0 +1,26 @@
+{
+  "name": "walk-with-me",
+  "version": "0.0.1",
+  "description": "Walking buddy matching app.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Shao",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "nodemon": "^2.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.15.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11",
+    "mqtt": "^3.0.0"
+  }
+}
