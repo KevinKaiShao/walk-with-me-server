@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 import eventsManager from './async/EventsManager';
 
+import Companion from './models/Companion';
+
 import routes from './routes';
 
 // Initialize DB
@@ -36,8 +38,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 // API handlers
-app.get('/', (req, res) => res.send('Hello World!'));
-// app.use('/', routes);
+app.get('/', (req, res) => res.send('root url'));
+app.use("/api/", routes);
 
 const server = http.Server(app);
 const portNumber = 8000; // for locahost:8000

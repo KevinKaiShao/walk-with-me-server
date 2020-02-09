@@ -1,7 +1,7 @@
 import messagingClient from './Messaging';
 
 /**
- * Where we set up and configure our Solace subscriptions and event listeners
+ * Where we set up and configure our Solace subscriptions and attach event listeners
  */
 class EventsManager {
     constructor(){

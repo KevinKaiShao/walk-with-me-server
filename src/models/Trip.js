@@ -1,24 +1,27 @@
 import mongoose from 'mongoose';
 
-const tripSchema = mongoose.Schema({
-    tripId: { type: String },
-    travelerId: { type: String, required: true, trim: true },
-    companionId: { type: String },
+const tripSchema = new mongoose.Schema({
+    travelerId: {
+        type: mongoose.ObjectId,
+        ref: 'Traveler',
+        required: true
+    },
+    companionId: mongoose.ObjectId,
     startingLocation: {
-		type: {
-			type: String,
-			required: true,
-			default: "Point"
-		},
+        type: {
+            type: String,
+            required: true,
+            default: "Point"
+        },
         coordinates: [Number],
         address: { type: String }
     },
     destinationLocation: {
-		type: {
-			type: String,
-			required: true,
-			default: "Point"
-		},
+        type: {
+            type: String,
+            required: true,
+            default: "Point"
+        },
         coordinates: [Number],
         address: { type: String }
     },
@@ -36,3 +39,5 @@ const tripSchema = mongoose.Schema({
 
 // Represents a Trip
 const Trip = mongoose.model('Trip', tripSchema);
+
+export default Trip;

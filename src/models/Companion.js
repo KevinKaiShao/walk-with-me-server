@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
 /** Companion schema */
-const companionSchema = mongoose.Schema({
-	userId: { type: String, unique: true, required: true, trim: true },
+const companionSchema = new mongoose.Schema({
 	firstName: { type: String, trim: true },
 	lastName: { type: String, trim: true },
 	// phone: { type: String },
@@ -20,7 +19,9 @@ const companionSchema = mongoose.Schema({
 });
 
 // Create index on location to allow geo-querying
-companionSchema.index({"location": "2dsphere", userId: 1});
+companionSchema.index({"location": "2dsphere"});
 
 /** Companion Entity */
 const Companion = mongoose.model('Companion', companionSchema);
+
+export default Companion;

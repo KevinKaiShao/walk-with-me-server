@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
 /** Traveler schema */
-const travelerSchema = mongoose.Schema({
-	userId: { type: String, unique: true, required: true, trim: true },
+const travelerSchema = new mongoose.Schema({
 	firstName: { type: String, trim: true },
 	lastName: { type: String, trim: true },
 	// phone: { type: String },
@@ -18,8 +17,7 @@ const travelerSchema = mongoose.Schema({
 	}
 });
 
-// Create index on location to allow geo-querying
-travelerSchema.index({"location": "2dsphere", userId: 1});
-
 /** Traveler Entity */
 const Traveler = mongoose.model('Traveler', travelerSchema);
+
+export default Traveler;
