@@ -46,7 +46,7 @@ router.post('/requesttrip/', async (req, res) => {
 
 // Companion confirm a trip
 router.post('/trips/', async (req, res) => {
-
+    // confirmTrip(req);
 });
 
 
