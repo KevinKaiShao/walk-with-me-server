@@ -1,5 +1,8 @@
 import messagingClient from './Messaging';
 
+import companionService from '../services/CompanionService';
+
+
 /**
  * Where we set up and configure our Solace subscriptions and attach event listeners
  */
@@ -26,6 +29,8 @@ class EventsManager {
             case 'CompanionLocation': {
                 const message = JSON.parse(messageString);
                 console.log("Message as object", message);
+                companionService.updateCompanionLocation(message.companionId, message.location[0], message.location[1])
+                .error( err => console.log(err));
                 break;
             }
             case 'TripDispatch': {

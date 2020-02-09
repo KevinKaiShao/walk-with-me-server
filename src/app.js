@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 import eventsManager from './async/EventsManager';
 
 import Companion from './models/Companion';
+import Traveler from './models/Traveler';
 
 import routes from './routes';
 
